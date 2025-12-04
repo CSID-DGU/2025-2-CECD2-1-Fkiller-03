@@ -41,8 +41,10 @@ export function Header() {
             <Workflow className="h-5 w-5 text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-bold">FlowDesk</h1>
-            <p className="text-xs text-muted-foreground">{getRoleLabel(user?.role || "")} Dashboard</p>
+            <h1 className="text-lg font-bold">ITOMS</h1>
+            <p className="text-xs text-muted-foreground">
+              {getRoleLabel(user?.role || "")} Dashboard
+            </p>
           </div>
         </div>
 
@@ -56,11 +58,17 @@ export function Header() {
               </Avatar>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 bg-popover" align="end" forceMount>
+          <DropdownMenuContent
+            className="w-56 bg-popover"
+            align="end"
+            forceMount
+          >
             <DropdownMenuLabel className="font-normal">
               <div className="flex flex-col space-y-1">
                 <p className="text-sm font-medium leading-none">{user?.name}</p>
-                <p className="text-xs leading-none text-muted-foreground">{user?.email}</p>
+                <p className="text-xs leading-none text-muted-foreground">
+                  {user?.email}
+                </p>
                 <p className="text-xs leading-none text-primary font-medium mt-1">
                   {getRoleLabel(user?.role || "")}
                 </p>

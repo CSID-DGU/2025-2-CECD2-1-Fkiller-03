@@ -5,7 +5,13 @@ import { mockApi } from "@/lib/mockApi";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { toast } from "sonner";
 import { LogIn, Workflow } from "lucide-react";
 
@@ -23,9 +29,9 @@ export default function Login() {
     try {
       const response = await mockApi.login({ email, password });
       setAuth(response.user, response.token);
-      
+
       toast.success("로그인 성공!");
-      
+
       // Route based on role
       if (response.user.role === "admin") {
         navigate("/admin");
@@ -48,14 +54,16 @@ export default function Login() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-hero shadow-glow mb-4">
             <Workflow className="h-8 w-8 text-white" />
           </div>
-          <h1 className="text-3xl font-bold mb-2">FlowDesk</h1>
-          <p className="text-muted-foreground">현대적인 ITSM 플랫폼</p>
+          <h1 className="text-3xl font-bold mb-2">ITOMS</h1>
+          <p className="text-muted-foreground">Modern ITSM Service</p>
         </div>
 
         <Card className="shadow-lg border-border/50 backdrop-blur-sm">
           <CardHeader className="space-y-1">
             <CardTitle className="text-2xl">환영합니다</CardTitle>
-            <CardDescription>워크스페이스에 접속하려면 로그인하세요</CardDescription>
+            <CardDescription>
+              워크스페이스에 접속하려면 로그인하세요
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -96,7 +104,9 @@ export default function Login() {
             </form>
 
             <div className="mt-6 pt-6 border-t border-border/50">
-              <p className="text-sm text-muted-foreground text-center mb-3">데모 계정:</p>
+              <p className="text-sm text-muted-foreground text-center mb-3">
+                데모 계정:
+              </p>
               <div className="space-y-2 text-xs text-muted-foreground">
                 <div className="flex justify-between p-2 rounded bg-muted/50">
                   <span className="font-medium">일반 사용자:</span>
@@ -110,7 +120,9 @@ export default function Login() {
                   <span className="font-medium">관리자:</span>
                   <span>admin@example.com</span>
                 </div>
-                <p className="text-center pt-2">비밀번호: <span className="font-mono">1234</span></p>
+                <p className="text-center pt-2">
+                  비밀번호: <span className="font-mono">1234</span>
+                </p>
               </div>
             </div>
           </CardContent>
